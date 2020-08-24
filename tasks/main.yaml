@@ -1,4 +1,10 @@
 ---
+- name: Ensure EPEL is enabled 
+  yum: 
+    name: epel-release 
+    state: present 
+    become: True 
+    
 - name: Installing Required packages
   yum: 
     name: "{{ item }}"
